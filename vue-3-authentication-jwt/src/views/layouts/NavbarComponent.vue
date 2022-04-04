@@ -158,8 +158,8 @@
                   </a>
                 </li>
                 <li>
-                  <a href="auth-sign-in-social.html">
-                    <i class="feather icon-log-out"></i> Logout
+                  <a class="nav-link" href @click.prevent="Logout">
+                    <font-awesome-icon icon="sign-out-alt" /> Logout
                   </a>
                 </li>
               </ul>
@@ -172,9 +172,18 @@
 </template>
 
 <script>
+
+
 export default {
   name: "NavbarComponent",
-  components: {},
+  components: {  },
+  methods: {
+    Logout() {
+      this.$store.dispatch("auth/logout");
+      // this.$router.push("/login");
+      window.location.href = "login";
+    },
+  },
 };
 </script>
 

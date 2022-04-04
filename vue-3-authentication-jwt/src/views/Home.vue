@@ -323,7 +323,6 @@
 import LayoutDefault from "./layouts/LayoutDefault.vue";
 
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
   name: "Home",
   created() {
     this.$emit("update:layout", LayoutDefault);

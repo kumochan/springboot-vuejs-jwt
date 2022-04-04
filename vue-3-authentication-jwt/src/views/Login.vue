@@ -1,11 +1,17 @@
 <template>
   <section class="login-block">
+    <!-- Container-fluid starts -->
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-12">
-          <form class="md-float-material form-material">
+          <!-- Authentication card start -->
+          <Form
+            @submit="handleLogin"
+            :validation-schema="schema"
+            class="md-float-material form-material"
+          >
             <div class="text-center">
-              <img src="" alt="logo.png" />
+              <!-- <img src="../files/assets/images/logo.png" alt="logo.png" /> -->
             </div>
             <div class="auth-box card">
               <div class="card-block">
@@ -30,22 +36,26 @@
                   Sign in with your regular account
                 </p>
                 <div class="form-group form-primary">
-                  <input
+                  <!-- <input
                     type="text"
                     name="user-name"
                     class="form-control"
                     required=""
-                  />
+                  /> -->
+                  <Field name="username" type="text" class="form-control" />
+                  <ErrorMessage name="username" class="error-feedback" />
                   <span class="form-bar"></span>
                   <label class="float-label">Username</label>
                 </div>
                 <div class="form-group form-primary">
-                  <input
+                  <!-- <input
                     type="password"
                     name="password"
                     class="form-control"
                     required=""
-                  />
+                  /> -->
+                  <Field name="password" type="password" class="form-control" />
+                  <ErrorMessage name="password" class="error-feedback" />
                   <span class="form-bar"></span>
                   <label class="float-label">Password</label>
                 </div>
@@ -74,7 +84,7 @@
                 </div>
                 <div class="row m-t-30">
                   <div class="col-md-12">
-                    <button
+                    <!-- <button
                       type="button"
                       class="
                         btn btn-primary btn-md btn-block
@@ -84,6 +94,16 @@
                       "
                     >
                       LOGIN
+                    </button> -->
+                    <button
+                      class="btn btn-primary btn-block"
+                      :disabled="loading"
+                    >
+                      <span
+                        v-show="loading"
+                        class="spinner-border spinner-border-sm"
+                      ></span>
+                      <span>Login</span>
                     </button>
                   </div>
                 </div>
@@ -94,30 +114,69 @@
                 </p>
               </div>
             </div>
-          </form>
+          </Form>
+          <!-- end of form -->
         </div>
+        <!-- Authentication card end -->
       </div>
+      <!-- end of col-sm-12 -->
     </div>
+    <!-- end of row -->
+
+    <!-- end of container-fluid -->
   </section>
+
+  <!-- <div class="col-md-12">
+    <div class="card card-container">
+      <img
+        id="profile-img"
+        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+        class="profile-img-card"
+      />
+      <Form @submit="handleLogin" :validation-schema="schema">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <Field name="username" type="text" class="form-control" />
+          <ErrorMessage name="username" class="error-feedback" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <Field name="password" type="password" class="form-control" />
+          <ErrorMessage name="password" class="error-feedback" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" :disabled="loading">
+            <span
+              v-show="loading"
+              class="spinner-border spinner-border-sm"
+            ></span>
+            <span>Login</span>
+          </button>
+        </div>
+        <div class="form-group">
+          <div v-if="message" class="alert alert-danger" role="alert">
+            {{ message }}
+          </div>
+        </div>
+      </Form>
+    </div>
+  </div> -->
 </template>
-
 <script>
-// import { Form, Field, ErrorMessage } from "vee-validate";
+import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
-
 export default {
   name: "Login",
   components: {
-    // Form,
-    // Field,
-    // ErrorMessage,
+    Form,
+    Field,
+    ErrorMessage,
   },
   data() {
     const schema = yup.object().shape({
       username: yup.string().required("Username is required!"),
       password: yup.string().required("Password is required!"),
     });
-
     return {
       loading: false,
       message: "",
@@ -137,10 +196,10 @@ export default {
   methods: {
     handleLogin(user) {
       this.loading = true;
-
       this.$store.dispatch("auth/login", user).then(
         () => {
-          this.$router.push("/profile");
+          // this.$router.push("/profile");
+          window.location.href = '/profile';
         },
         (error) => {
           this.loading = false;
@@ -157,30 +216,32 @@ export default {
 };
 </script>
 
+
 <style scoped>
-.card {
-  border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px 0 rgb(43 43 43 / 10%),
-    0 11px 6px -7px rgb(43 43 43 / 10%);
-  box-shadow: 0 0 5px 0 rgb(43 43 43 / 10%), 0 11px 6px -7px rgb(43 43 43 / 10%);
-  border: none;
-  margin-bottom: 30px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+/* @import './admindek/css/pages.css'; */
+.login-block {
+  margin: 30px auto;
+  min-height: 93.6vh;
 }
 
-.form-group {
-  margin-bottom: 1.25em;
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
+
 .login-block .auth-box {
-  margin: 20px auto 0;
+  margin: 20px auto 0 auto;
   max-width: 450px;
 }
-
 .card .card-block {
   padding: 1.25rem;
 }
-
+.form-material .form-group {
+  position: relative;
+}
 .form-material .form-control {
   display: inline-block;
   height: 43px;
@@ -195,40 +256,4 @@ export default {
   box-shadow: none;
   border-bottom: 1px solid #ccc;
 }
-/* label {
-  display: block;
-  margin-top: 10px;
-}
-
-.card-container.card {
-  max-width: 350px !important;
-  padding: 40px 40px;
-}
-
-.card {
-  background-color: #f7f7f7;
-  padding: 20px 25px 30px;
-  margin: 0 auto 25px;
-  margin-top: 50px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
-
-.profile-img-card {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 10px;
-  display: block;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
-
-.error-feedback {
-  color: red;
-} */
 </style>
