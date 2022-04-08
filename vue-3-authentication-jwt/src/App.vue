@@ -1,6 +1,6 @@
 <template>
   <component :is="layout">
-    <router-view v-model:layout="layout" />
+    <router-view v-model:layout.sync="layout" />
   </component>
 </template>
 

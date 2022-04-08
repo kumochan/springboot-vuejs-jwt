@@ -1,278 +1,797 @@
 <template>
-    <div>
-    <!-- <div class="loader-bg">
-        <div class="loader-bar"></div>
-    </div> -->
-    <!-- [ Pre-loader ] end -->
-    <div id="pcoded" class="pcoded">
-      <div class="pcoded-overlay-box"></div>
-      <div class="pcoded-container navbar-wrapper">
-        <!-- [ Header ] start -->
-        <NavbarComponent></NavbarComponent>
-        <!-- [ chat user list ] start -->
-        <div id="sidebar" class="users p-chat-user showChat">
-          <div class="had-container">
-            <div class="p-fixed users-main">
-              <div class="user-box">
-                <div class="chat-search-box">
-                  <a class="back_friendlist">
-                    <i class="feather icon-x"></i>
+  <div id="wrapper">
+    <NavbarComponent />
+    <SlidebarComponent />
+    <div class="content-page">
+      <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+          <!-- start page title -->
+          <div class="row">
+            <div class="col-12">
+              <div class="page-title-box">
+                <div class="page-title-right">
+                  <form class="form-inline">
+                    <div class="form-group">
+                      <div class="input-group input-group-sm">
+                        <input
+                          type="text"
+                          class="form-control border"
+                          id="dash-daterange"
+                        />
+                        <div class="input-group-append">
+                          <span
+                            class="
+                              input-group-text
+                              bg-blue
+                              border-blue
+                              text-white
+                            "
+                          >
+                            <i class="mdi mdi-calendar-range"></i>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <a
+                      href="javascript: void(0);"
+                      class="btn btn-blue btn-sm ml-2"
+                    >
+                      <i class="mdi mdi-autorenew"></i>
+                    </a>
+                    <a
+                      href="javascript: void(0);"
+                      class="btn btn-blue btn-sm ml-1"
+                    >
+                      <i class="mdi mdi-filter-variant"></i>
+                    </a>
+                  </form>
+                </div>
+                <h4 class="page-title">Dashboard</h4>
+              </div>
+            </div>
+          </div>
+          <!-- end page title -->
+
+          <div class="row">
+            <div class="col-md-6 col-xl-3">
+              <div class="widget-rounded-circle card-box">
+                <div class="row">
+                  <div class="col-6">
+                    <div
+                      class="
+                        avatar-lg
+                        rounded-circle
+                        bg-soft-primary
+                        border-primary border
+                      "
+                    >
+                      <i class="fe-heart font-22 avatar-title text-primary"></i>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="text-right">
+                      <h3 class="mt-1">
+                        $<span data-plugin="counterup">58,947</span>
+                      </h3>
+                      <p class="text-muted mb-1 text-truncate">Total Revenue</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- end row-->
+              </div>
+              <!-- end widget-rounded-circle-->
+            </div>
+            <!-- end col-->
+
+            <div class="col-md-6 col-xl-3">
+              <div class="widget-rounded-circle card-box">
+                <div class="row">
+                  <div class="col-6">
+                    <div
+                      class="
+                        avatar-lg
+                        rounded-circle
+                        bg-soft-success
+                        border-success border
+                      "
+                    >
+                      <i
+                        class="
+                          fe-shopping-cart
+                          font-22
+                          avatar-title
+                          text-success
+                        "
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="text-right">
+                      <h3 class="text-dark mt-1">
+                        <span data-plugin="counterup">127</span>
+                      </h3>
+                      <p class="text-muted mb-1 text-truncate">Today's Sales</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- end row-->
+              </div>
+              <!-- end widget-rounded-circle-->
+            </div>
+            <!-- end col-->
+
+            <div class="col-md-6 col-xl-3">
+              <div class="widget-rounded-circle card-box">
+                <div class="row">
+                  <div class="col-6">
+                    <div
+                      class="
+                        avatar-lg
+                        rounded-circle
+                        bg-soft-info
+                        border-info border
+                      "
+                    >
+                      <i
+                        class="
+                          fe-bar-chart-line-
+                          font-22
+                          avatar-title
+                          text-info
+                        "
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="text-right">
+                      <h3 class="text-dark mt-1">
+                        <span data-plugin="counterup">0.58</span>%
+                      </h3>
+                      <p class="text-muted mb-1 text-truncate">Conversion</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- end row-->
+              </div>
+              <!-- end widget-rounded-circle-->
+            </div>
+            <!-- end col-->
+
+            <div class="col-md-6 col-xl-3">
+              <div class="widget-rounded-circle card-box">
+                <div class="row">
+                  <div class="col-6">
+                    <div
+                      class="
+                        avatar-lg
+                        rounded-circle
+                        bg-soft-warning
+                        border-warning border
+                      "
+                    >
+                      <i class="fe-eye font-22 avatar-title text-warning"></i>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="text-right">
+                      <h3 class="text-dark mt-1">
+                        <span data-plugin="counterup">78.41</span>k
+                      </h3>
+                      <p class="text-muted mb-1 text-truncate">
+                        Today's Visits
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- end row-->
+              </div>
+              <!-- end widget-rounded-circle-->
+            </div>
+            <!-- end col-->
+          </div>
+          <!-- end row-->
+
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card-box">
+                <div class="dropdown float-right">
+                  <a
+                    href="#"
+                    class="dropdown-toggle arrow-none card-drop"
+                    data-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="mdi mdi-dots-vertical"></i>
                   </a>
-                  <div class="right-icon-control">
-                    <div class="input-group input-group-button">
-                      <input
-                        type="text"
-                        id="search-friends"
-                        name="footer-email"
-                        class="form-control"
-                        placeholder="Search Friend"
-                      />
-                      <div class="input-group-append">
-                        <button
-                          class="btn btn-primary waves-effect waves-light"
-                          type="button"
-                        >
-                          <i class="feather icon-search"></i>
-                        </button>
-                      </div>
-                    </div>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item"
+                      >Sales Report</a
+                    >
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item"
+                      >Export Report</a
+                    >
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item"
+                      >Profit</a
+                    >
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item"
+                      >Action</a
+                    >
                   </div>
                 </div>
-                <div class="main-friend-list">
-                  <div
-                    class="media userlist-box waves-effect waves-light"
-                    data-id="1"
-                    data-status="online"
-                    data-username="Josephin Doe"
-                  >
-                    <a class="media-left" href="#!">
-                      <img
-                        class="media-object img-radius img-radius"
-                        src="/admindek/images/avatar-3.jpg"
-                        alt="Generic placeholder image "
-                      />
-                      <div class="live-status bg-success"></div>
-                    </a>
-                    <div class="media-body">
-                      <div class="chat-header">Josephin Doe</div>
-                    </div>
-                  </div>
-                  <div
-                    class="media userlist-box waves-effect waves-light"
-                    data-id="2"
-                    data-status="online"
-                    data-username="Lary Doe"
-                  >
-                    <a class="media-left" href="#!">
-                      <img
-                        class="media-object img-radius"
-                        src="/admindek/images/avatar-2.jpg"
-                        alt="Generic placeholder image"
-                      />
-                      <div class="live-status bg-success"></div>
-                    </a>
-                    <div class="media-body">
-                      <div class="f-13 chat-header">Lary Doe</div>
-                    </div>
-                  </div>
-                  <div
-                    class="media userlist-box waves-effect waves-light"
-                    data-id="3"
-                    data-status="online"
-                    data-username="Alice"
-                  >
-                    <a class="media-left" href="#!">
-                      <img
-                        class="media-object img-radius"
-                        src="/admindek/images/avatar-4.jpg"
-                        alt="Generic placeholder image"
-                      />
-                      <div class="live-status bg-success"></div>
-                    </a>
-                    <div class="media-body">
-                      <div class="f-13 chat-header">Alice</div>
-                    </div>
-                  </div>
-                  <div
-                    class="media userlist-box waves-effect waves-light"
-                    data-id="4"
-                    data-status="offline"
-                    data-username="Alia"
-                  >
-                    <a class="media-left" href="#!">
-                      <img
-                        class="media-object img-radius"
-                        src="/admindek/images/avatar-3.jpg"
-                        alt="Generic placeholder image"
-                      />
-                      <div class="live-status bg-default"></div>
-                    </a>
-                    <div class="media-body">
-                      <div class="f-13 chat-header">
-                        Alia<small class="d-block text-muted">10 min ago</small>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="media userlist-box waves-effect waves-light"
-                    data-id="5"
-                    data-status="offline"
-                    data-username="Suzen"
-                  >
-                    <a class="media-left" href="#!">
-                      <img
-                        class="media-object img-radius"
-                        src="/admindek/images/avatar-2.jpg"
-                        alt="Generic placeholder image"
-                      />
-                      <div class="live-status bg-default"></div>
-                    </a>
-                    <div class="media-body">
-                      <div class="f-13 chat-header">
-                        Suzen<small class="d-block text-muted"
-                          >15 min ago</small
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- [ chat user list ] end -->
 
-        <!-- [ chat message ] start -->
-        <div class="showChat_inner">
-          <div class="media chat-inner-header">
-            <a class="back_chatBox">
-              <i class="feather icon-x"></i> Josephin Doe
-            </a>
-          </div>
-          <div class="main-friend-chat">
-            <div class="media chat-messages">
-              <a class="media-left photo-table" href="#!">
-                <img
-                  class="media-object img-radius img-radius m-t-5"
-                  src="/admindek/images/avatar-2.jpg"
-                  alt="Generic placeholder image"
-                />
-              </a>
-              <div class="media-body chat-menu-content">
-                <div class="">
-                  <p class="chat-cont">
-                    I'm just looking around. Will you tell me something about
-                    yourself?
+                <h4 class="header-title mb-0">Total Revenue</h4>
+
+                <div class="widget-chart text-center" dir="ltr">
+                  <div
+                    id="total-revenue"
+                    class="mt-0"
+                    data-colors="#f1556c"
+                  ></div>
+
+                  <h5 class="text-muted mt-0">Total sales made today</h5>
+                  <h2>$178</h2>
+
+                  <p class="text-muted w-75 mx-auto sp-line-2">
+                    Traditional heading elements are designed to work best in
+                    the meat of your page content.
                   </p>
-                </div>
-                <p class="chat-time">8:20 a.m.</p>
-              </div>
-            </div>
-            <div class="media chat-messages">
-              <div class="media-body chat-menu-reply">
-                <div class="">
-                  <p class="chat-cont">Ohh! very nice</p>
-                </div>
-                <p class="chat-time">8:22 a.m.</p>
-              </div>
-            </div>
-            <div class="media chat-messages">
-              <a class="media-left photo-table" href="#!">
-                <img
-                  class="media-object img-radius img-radius m-t-5"
-                  src="/admindek/images/avatar-2.jpg"
-                  alt="Generic placeholder image"
-                />
-              </a>
-              <div class="media-body chat-menu-content">
-                <div class="">
-                  <p class="chat-cont">can you come with me?</p>
-                </div>
-                <p class="chat-time">8:20 a.m.</p>
-              </div>
-            </div>
-          </div>
-          <div class="chat-reply-box">
-            <div class="right-icon-control">
-              <div class="input-group input-group-button">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Write hear . . "
-                />
-                <div class="input-group-append">
-                  <button
-                    class="btn btn-primary waves-effect waves-light"
-                    type="button"
-                  >
-                    <i class="feather icon-message-circle"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- [ chat message ] end -->
 
-        <div class="pcoded-main-container">
-          <div class="pcoded-wrapper">
-            <!-- [ navigation menu ] start -->
-            <SlidebarComponent></SlidebarComponent>
-            <!-- [ navigation menu ] end -->
-            <slot />
-            <!-- [ style Customizer ] start -->
-            <div id="styleSelector"></div>
-            <!-- [ style Customizer ] end -->
+                  <div class="row mt-3">
+                    <div class="col-4">
+                      <p class="text-muted font-15 mb-1 text-truncate">
+                        Target
+                      </p>
+                      <h4>
+                        <i class="fe-arrow-down text-danger mr-1"></i>$7.8k
+                      </h4>
+                    </div>
+                    <div class="col-4">
+                      <p class="text-muted font-15 mb-1 text-truncate">
+                        Last week
+                      </p>
+                      <h4>
+                        <i class="fe-arrow-up text-success mr-1"></i>$1.4k
+                      </h4>
+                    </div>
+                    <div class="col-4">
+                      <p class="text-muted font-15 mb-1 text-truncate">
+                        Last Month
+                      </p>
+                      <h4>
+                        <i class="fe-arrow-down text-danger mr-1"></i>$15k
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end card-box -->
+            </div>
+            <!-- end col-->
+
+            <div class="col-lg-8">
+              <div class="card-box pb-2">
+                <div class="float-right d-none d-md-inline-block">
+                  <div class="btn-group mb-2">
+                    <button type="button" class="btn btn-xs btn-light">
+                      Today
+                    </button>
+                    <button type="button" class="btn btn-xs btn-light">
+                      Weekly
+                    </button>
+                    <button type="button" class="btn btn-xs btn-secondary">
+                      Monthly
+                    </button>
+                  </div>
+                </div>
+
+                <h4 class="header-title mb-3">Sales Analytics</h4>
+
+                <div dir="ltr">
+                  <div
+                    id="sales-analytics"
+                    class="mt-4"
+                    data-colors="#1abc9c,#4a81d4"
+                  ></div>
+                </div>
+              </div>
+              <!-- end card-box -->
+            </div>
+            <!-- end col-->
+          </div>
+          <!-- end row -->
+
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="card-box">
+                <div class="dropdown float-right">
+                  <a
+                    href="#"
+                    class="dropdown-toggle arrow-none card-drop"
+                    data-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="mdi mdi-dots-vertical"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item"
+                      >Edit Report</a
+                    >
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item"
+                      >Export Report</a
+                    >
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item"
+                      >Action</a
+                    >
+                  </div>
+                </div>
+
+                <h4 class="header-title mb-3">Top 5 Users Balances</h4>
+
+                <div class="table-responsive">
+                  <table
+                    class="
+                      table
+                      table-borderless
+                      table-hover
+                      table-nowrap
+                      table-centered
+                      m-0
+                    "
+                  >
+                    <thead class="thead-light">
+                      <tr>
+                        <th colspan="2">Profile</th>
+                        <th>Currency</th>
+                        <th>Balance</th>
+                        <th>Reserved in orders</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="width: 36px">
+                          <img
+                            src="assets/images/users/user-2.jpg"
+                            alt="contact-img"
+                            title="contact-img"
+                            class="rounded-circle avatar-sm"
+                          />
+                        </td>
+
+                        <td>
+                          <h5 class="m-0 font-weight-normal">Tomaslau</h5>
+                          <p class="mb-0 text-muted">
+                            <small>Member Since 2017</small>
+                          </p>
+                        </td>
+
+                        <td>
+                          <i class="mdi mdi-currency-btc text-primary"></i> BTC
+                        </td>
+
+                        <td>0.00816117 BTC</td>
+
+                        <td>0.00097036 BTC</td>
+
+                        <td>
+                          <a
+                            href="javascript: void(0);"
+                            class="btn btn-xs btn-light"
+                            ><i class="mdi mdi-plus"></i
+                          ></a>
+                          <a
+                            href="javascript: void(0);"
+                            class="btn btn-xs btn-danger"
+                            ><i class="mdi mdi-minus"></i
+                          ></a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td style="width: 36px">
+                          <img
+                            src="assets/images/users/user-3.jpg"
+                            alt="contact-img"
+                            title="contact-img"
+                            class="rounded-circle avatar-sm"
+                          />
+                        </td>
+
+                        <td>
+                          <h5 class="m-0 font-weight-normal">Erwin E. Brown</h5>
+                          <p class="mb-0 text-muted">
+                            <small>Member Since 2017</small>
+                          </p>
+                        </td>
+
+                        <td>
+                          <i class="mdi mdi-currency-eth text-primary"></i> ETH
+                        </td>
+
+                        <td>3.16117008 ETH</td>
+
+                        <td>1.70360009 ETH</td>
+
+                        <td>
+                          <a
+                            href="javascript: void(0);"
+                            class="btn btn-xs btn-light"
+                            ><i class="mdi mdi-plus"></i
+                          ></a>
+                          <a
+                            href="javascript: void(0);"
+                            class="btn btn-xs btn-danger"
+                            ><i class="mdi mdi-minus"></i
+                          ></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="width: 36px">
+                          <img
+                            src="assets/images/users/user-4.jpg"
+                            alt="contact-img"
+                            title="contact-img"
+                            class="rounded-circle avatar-sm"
+                          />
+                        </td>
+
+                        <td>
+                          <h5 class="m-0 font-weight-normal">
+                            Margeret V. Ligon
+                          </h5>
+                          <p class="mb-0 text-muted">
+                            <small>Member Since 2017</small>
+                          </p>
+                        </td>
+
+                        <td>
+                          <i class="mdi mdi-currency-eur text-primary"></i> EUR
+                        </td>
+
+                        <td>25.08 EUR</td>
+
+                        <td>12.58 EUR</td>
+
+                        <td>
+                          <a
+                            href="javascript: void(0);"
+                            class="btn btn-xs btn-light"
+                            ><i class="mdi mdi-plus"></i
+                          ></a>
+                          <a
+                            href="javascript: void(0);"
+                            class="btn btn-xs btn-danger"
+                            ><i class="mdi mdi-minus"></i
+                          ></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="width: 36px">
+                          <img
+                            src="assets/images/users/user-5.jpg"
+                            alt="contact-img"
+                            title="contact-img"
+                            class="rounded-circle avatar-sm"
+                          />
+                        </td>
+
+                        <td>
+                          <h5 class="m-0 font-weight-normal">
+                            Jose D. Delacruz
+                          </h5>
+                          <p class="mb-0 text-muted">
+                            <small>Member Since 2017</small>
+                          </p>
+                        </td>
+
+                        <td>
+                          <i class="mdi mdi-currency-cny text-primary"></i> CNY
+                        </td>
+
+                        <td>82.00 CNY</td>
+
+                        <td>30.83 CNY</td>
+
+                        <td>
+                          <a
+                            href="javascript: void(0);"
+                            class="btn btn-xs btn-light"
+                            ><i class="mdi mdi-plus"></i
+                          ></a>
+                          <a
+                            href="javascript: void(0);"
+                            class="btn btn-xs btn-danger"
+                            ><i class="mdi mdi-minus"></i
+                          ></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="width: 36px">
+                          <img
+                            src="assets/images/users/user-6.jpg"
+                            alt="contact-img"
+                            title="contact-img"
+                            class="rounded-circle avatar-sm"
+                          />
+                        </td>
+
+                        <td>
+                          <h5 class="m-0 font-weight-normal">Luke J. Sain</h5>
+                          <p class="mb-0 text-muted">
+                            <small>Member Since 2017</small>
+                          </p>
+                        </td>
+
+                        <td>
+                          <i class="mdi mdi-currency-btc text-primary"></i> BTC
+                        </td>
+
+                        <td>2.00816117 BTC</td>
+
+                        <td>1.00097036 BTC</td>
+
+                        <td>
+                          <a
+                            href="javascript: void(0);"
+                            class="btn btn-xs btn-light"
+                            ><i class="mdi mdi-plus"></i
+                          ></a>
+                          <a
+                            href="javascript: void(0);"
+                            class="btn btn-xs btn-danger"
+                            ><i class="mdi mdi-minus"></i
+                          ></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+
+            <div class="col-xl-6">
+              <div class="card-box">
+                <div class="dropdown float-right">
+                  <a
+                    href="#"
+                    class="dropdown-toggle arrow-none card-drop"
+                    data-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="mdi mdi-dots-vertical"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item"
+                      >Edit Report</a
+                    >
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item"
+                      >Export Report</a
+                    >
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item"
+                      >Action</a
+                    >
+                  </div>
+                </div>
+
+                <h4 class="header-title mb-3">Revenue History</h4>
+
+                <div class="table-responsive">
+                  <table
+                    class="
+                      table
+                      table-borderless
+                      table-nowrap
+                      table-hover
+                      table-centered
+                      m-0
+                    "
+                  >
+                    <thead class="thead-light">
+                      <tr>
+                        <th>Marketplaces</th>
+                        <th>Date</th>
+                        <th>Payouts</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <h5 class="m-0 font-weight-normal">Themes Market</h5>
+                        </td>
+
+                        <td>Oct 15, 2018</td>
+
+                        <td>$5848.68</td>
+
+                        <td>
+                          <span class="badge bg-soft-warning text-warning"
+                            >Upcoming</span
+                          >
+                        </td>
+
+                        <td>
+                          <a
+                            href="javascript: void(0);"
+                            class="btn btn-xs btn-light"
+                            ><i class="mdi mdi-pencil"></i
+                          ></a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <h5 class="m-0 font-weight-normal">Freelance</h5>
+                        </td>
+
+                        <td>Oct 12, 2018</td>
+
+                        <td>$1247.25</td>
+
+                        <td>
+                          <span class="badge bg-soft-success text-success"
+                            >Paid</span
+                          >
+                        </td>
+
+                        <td>
+                          <a
+                            href="javascript: void(0);"
+                            class="btn btn-xs btn-light"
+                            ><i class="mdi mdi-pencil"></i
+                          ></a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <h5 class="m-0 font-weight-normal">Share Holding</h5>
+                        </td>
+
+                        <td>Oct 10, 2018</td>
+
+                        <td>$815.89</td>
+
+                        <td>
+                          <span class="badge bg-soft-success text-success"
+                            >Paid</span
+                          >
+                        </td>
+
+                        <td>
+                          <a
+                            href="javascript: void(0);"
+                            class="btn btn-xs btn-light"
+                            ><i class="mdi mdi-pencil"></i
+                          ></a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <h5 class="m-0 font-weight-normal">
+                            Envato's Affiliates
+                          </h5>
+                        </td>
+
+                        <td>Oct 03, 2018</td>
+
+                        <td>$248.75</td>
+
+                        <td>
+                          <span class="badge bg-soft-danger text-danger"
+                            >Overdue</span
+                          >
+                        </td>
+
+                        <td>
+                          <a
+                            href="javascript: void(0);"
+                            class="btn btn-xs btn-light"
+                            ><i class="mdi mdi-pencil"></i
+                          ></a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <h5 class="m-0 font-weight-normal">
+                            Marketing Revenue
+                          </h5>
+                        </td>
+
+                        <td>Sep 21, 2018</td>
+
+                        <td>$978.21</td>
+
+                        <td>
+                          <span class="badge bg-soft-warning text-warning"
+                            >Upcoming</span
+                          >
+                        </td>
+
+                        <td>
+                          <a
+                            href="javascript: void(0);"
+                            class="btn btn-xs btn-light"
+                            ><i class="mdi mdi-pencil"></i
+                          ></a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <h5 class="m-0 font-weight-normal">
+                            Advertise Revenue
+                          </h5>
+                        </td>
+
+                        <td>Sep 15, 2018</td>
+
+                        <td>$358.10</td>
+
+                        <td>
+                          <span class="badge bg-soft-success text-success"
+                            >Paid</span
+                          >
+                        </td>
+
+                        <td>
+                          <a
+                            href="javascript: void(0);"
+                            class="btn btn-xs btn-light"
+                            ><i class="mdi mdi-pencil"></i
+                          ></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- end .table-responsive-->
+              </div>
+              <!-- end card-box-->
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
+        </div>
+        <!-- container -->
+      </div>
+      <!-- content -->
+
+      <!-- Footer Start -->
+      <footer class="footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              2015 -
+              &copy; UBold theme by <a href="">Coderthemes</a>
+            </div>
+            <div class="col-md-6">
+              <div class="text-md-right footer-links d-none d-sm-block">
+                <a href="javascript:void(0);">About Us</a>
+                <a href="javascript:void(0);">Help</a>
+                <a href="javascript:void(0);">Contact Us</a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </footer>
+      <!-- end Footer -->
     </div>
-    <!-- Warning Section Starts -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 10]>
-    <div class="ie-warning">
-        <h1>Warning!!</h1>
-        <p>You are using an outdated version of Internet Explorer, please upgrade
-            <br/>to any of the following web browsers to access this website.
-        </p>
-        <div class="iew-container">
-            <ul class="iew-download">
-                <li>
-                    <a href="http://www.google.com/chrome/">
-                        <img src="./files/assets/images/browser/chrome.png" alt="Chrome">
-                        <div>Chrome</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.mozilla.org/en-US/firefox/new/">
-                        <img src="./files/assets/images/browser/firefox.png" alt="Firefox">
-                        <div>Firefox</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.opera.com">
-                        <img src="./files/assets/images/browser/opera.png" alt="Opera">
-                        <div>Opera</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.apple.com/safari/">
-                        <img src="./files/assets/images/browser/safari.png" alt="Safari">
-                        <div>Safari</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                        <img src="./files/assets/images/browser/ie.png" alt="">
-                        <div>IE (9 & above)</div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <p>Sorry for the inconvenience!</p>
-    </div>
-<![endif]-->
-    <!-- Warning Section Ends -->
   </div>
 </template>
 
@@ -284,7 +803,7 @@ export default {
   name: "LayoutDefault",
   components: {
     NavbarComponent,
-    SlidebarComponent,
+    SlidebarComponent
   },
 };
 </script>

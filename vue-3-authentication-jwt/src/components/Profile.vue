@@ -82,6 +82,8 @@
 import LayoutDefault from "../views/layouts/LayoutDefault.vue";
 export default {
   name: "Profile",
+  components: {
+  },
   created() {
     this.$emit("update:layout", LayoutDefault);
   },

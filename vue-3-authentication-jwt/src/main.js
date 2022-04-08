@@ -18,9 +18,11 @@ import {
 library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt);
 
 // Vue.config.productionTip = false;
+// import LayoutDefault from '@/views/layouts/LayoutDefault.vue';
 
 createApp(App)
   .use(router)
   .use(store)
   .component("font-awesome-icon", FontAwesomeIcon)
+  // .component('LayoutDefault', LayoutDefault)
   .mount("#app");
