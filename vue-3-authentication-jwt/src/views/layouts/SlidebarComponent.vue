@@ -54,14 +54,14 @@
             <a href="apps-calendar.html">
               <!-- <i data-feather="calendar"></i> -->
               <font-awesome-icon icon="sign-out-alt" />
-              <font-awesome-icon icon="icon-asterisk" />
+              <font-awesome-icon icon="user-plus" />
               <span> Calendar </span>
             </a>
           </li>
 
           <li>
             <a href="apps-chat.html">
-              <i data-feather="message-square"></i>
+              <!-- <i data-feather="message-square"></i> -->
               <span> Chat </span>
             </a>
           </li>
