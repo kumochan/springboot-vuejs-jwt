@@ -53,8 +53,9 @@
           <li>
             <a href="apps-calendar.html">
               <!-- <i data-feather="calendar"></i> -->
-              <font-awesome-icon icon="sign-out-alt" />
               <font-awesome-icon icon="user-plus" />
+              <font-awesome-icon icon="sign-out-alt" />
+              <font-awesome-icon icon="copyright" />
               <span> Calendar </span>
             </a>
           </li>
