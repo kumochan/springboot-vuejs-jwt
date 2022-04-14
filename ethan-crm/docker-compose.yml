@@ -1,0 +1,34 @@
+version: "3.6"
+
+services:
+  vue-crm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ".:/usr/src/app"
+    environment:
+      - npm_config_unsafe_perm=true
+    container_name: ethan-vue-crm
+    image: ethan/vue-crm
+    restart: always
+    ports:
+      - "8081:8080"
+    # networks:
+    #   - vue-network-2
+
+# networks:
+#   vue-network-2:
+#     driver: bridge
+
+
+#     version: "3.6"
+
+# services:
+#   app:
+#     image: learning-docker/vue:v1
+#     volumes:
+#       - ./src:/app/src
+#     ports:
+#       - "5000:8080"
+#     restart: unless-stopped

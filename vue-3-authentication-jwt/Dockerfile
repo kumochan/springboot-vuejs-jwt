@@ -11,14 +11,14 @@ RUN npm install
 # RUN npm i --save @fortawesome/free-solid-svg-icons
 # RUN npm i --save @fortawesome/free-regular-svg-icons
 # RUN npm i --save @fortawesome/vue-fontawesome@latest
-                # "@fortawesome/fontawesome-svg-core": "^1.2.35",
-                # "@fortawesome/free-regular-svg-icons": "^6.1.1",
-                # "@fortawesome/free-solid-svg-icons": "^5.15.4",
-                # "@fortawesome/vue-fontawesome": "^3.0.0-3",
 # copy files and folders to the current working directory (i.e. 'app' folder)
 COPY . .
 # build app for production with minification
 # RUN npm run build
+# RUN npm i @vue/cli-service
+# RUN npm install -g @vue/cli-service
+# RUN npm install @babel/core @babel/preset-env
+
 EXPOSE 8080
 CMD ["npm", "run", "serve"]
 
